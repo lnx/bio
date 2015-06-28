@@ -23,4 +23,14 @@ public class Config {
 
 	}
 
+	public static class Image {
+
+		public static String DIRECTORY = CONFIG.getString("image.directory");
+		public static String DIRECTORY_TMP = CONFIG.getString("image.directory.tmp");
+		public static int LARGE = CONFIG.getInt("image.large");
+		public static int MEDIUM = CONFIG.getInt("image.medium");
+		public static int SMALL = CONFIG.getInt("image.small");
+
+	}
+
 }

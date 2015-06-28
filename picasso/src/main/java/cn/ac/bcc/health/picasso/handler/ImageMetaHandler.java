@@ -3,13 +3,15 @@ package cn.ac.bcc.health.picasso.handler;
 import spark.Request;
 import spark.Response;
 import cn.ac.bcc.health.picasso.annotation.Path;
+import cn.ac.bcc.health.picasso.core.Imager;
 
-@Path("/:hash/info")
-public class ImageInfoHandler extends Handler {
+@Path("/:hash/meta")
+public class ImageMetaHandler extends Handler {
 
 	@Override
 	protected Object get(Request request, Response response) {
-		return "info is: " + request.params("hash");
+		response.type("application/json");
+		return Imager.getImageMeta(request.params("hash")).toJson();
 	}
 
 	@Override
